@@ -15,10 +15,10 @@ async function bootstrap() {
 	
   });
   //app.setGlobalPrefix('api')
-  app.enableCors({
+  /*app.enableCors({
     origin: 'https://cinema24.vercel.app', // Укажите URL вашего клиента
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Укажите разрешенные методы
-  });
+  });*/
   
   await app.listen(port);
 }
