@@ -105,24 +105,24 @@ export class MovieService {
 			.exec()
 	}
 
-		async sendNotifications(dto: CreateMovieDto) {
-			if (process.env.NODE_ENV !== 'development')
-				await this.telegramService.sendPhoto(dto.poster)
-	
-			const msg = `<b>${dto.title}</b>\n\n`
-	
-			await this.telegramService.sendMessage(msg, {
-				reply_markup: {
-					inline_keyboard: [
-						[
-							{
-								url: 'https://cinema24.vercel.app/movies/`${slug}`',
-								text: '🍿 Go to watch',
-							},
-						],
+	async sendNotifications(dto: CreateMovieDto) {
+		if (process.env.NODE_ENV !== 'development')
+			await this.telegramService.sendPhoto(dto.poster)
+
+		const msg = `<b>${dto.title}</b>\n\n`
+
+		await this.telegramService.sendMessage(msg, {
+			reply_markup: {
+				inline_keyboard: [
+					[
+						{
+							url: 'https://okko.tv/movie/free-guy',
+							text: '🍿 Go to watch',
+						},
 					],
-				},
-			})
-		}
+				],
+			},
+		})
+	}
 	}
 
