@@ -11,9 +11,10 @@ import { ActorModule } from './actor/actor.module'
 import { MovieModule } from './movie/movie.module'
 import { RatingModule } from './rating/rating.module'
 import { TelegramModule } from './telegram/telegram.module'
-import { Module } from '@nestjs/common'
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common'
 import * as mongoose from 'mongoose';
 import mongodbConfig from './mongodb.config';
+import { FaviconMiddleware } from './favicon.middleware'
 
 
 @Module({
@@ -37,22 +38,8 @@ import mongodbConfig from './mongodb.config';
 	controllers: [AppController],
 	providers: [AppService], //снабжение пример: app сервисы
 })
-export class AppModule {
-	constructor() {
-		this.connectToMongoDB();
-	  }
-	
-	  private connectToMongoDB() {
-		mongoose
-		  .connect(mongodbConfig.uri)
-		  .then(() => {
-			console.log('Connected to MongoDB');
-		  })
-		  .catch((error) => {
-			console.error('Failed to connect to MongoDB:', error);
-		  });
-	  }
-	  
+export class AppModule implements NestModule {
+	configure(consumer: MiddlewareConsumer) {
+	  consumer.apply(FaviconMiddleware).forRoutes('*');
+	}
 }
-
-
