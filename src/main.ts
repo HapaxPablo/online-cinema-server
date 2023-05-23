@@ -14,6 +14,7 @@ async function bootstrap() {
    next();
 	
   });
+  app.setGlobalPrefix('api')
   await app.listen(port);
 }
 
