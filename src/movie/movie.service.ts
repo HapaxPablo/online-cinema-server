@@ -105,25 +105,24 @@ export class MovieService {
 			.exec()
 	}
 
-	async sendNotifications(dto: CreateMovieDto) {
-		if (process.env.NODE_ENV != 'development')
-		await this.telegramService.sendPhoto(dto.poster)
-		//т.к. сайт не является выпущенным будем, то фотки будут подгружаться из вне
-		/*await this.telegramService.sendPhoto(
-			'https://images.fanart.tv/fanart/john-wick-544936324f252.jpg'
-		)
-		const msg = `<b>${dto.title}</b>`
-		await this.telegramService.sendMessage(msg, {
-			reply_markup: {
-				inline_keyboard: [
-					[
-						{
-							url: 'https://wink.ru/media_items/55052479?utm_source=yandex&utm_medium=koldunschick&utm_content=name',
-							text: 'Go to watch',
-						},
+		async sendNotifications(dto: CreateMovieDto) {
+			if (process.env.NODE_ENV !== 'development')
+				await this.telegramService.sendPhoto(dto.poster)
+	
+			const msg = `<b>${dto.title}</b>\n\n`
+	
+			await this.telegramService.sendMessage(msg, {
+				reply_markup: {
+					inline_keyboard: [
+						[
+							{
+								url: 'https://cinema24.vercel.app/movies/`${slug}`',
+								text: '🍿 Go to watch',
+							},
+						],
 					],
-				],
-			},
-		})*/
+				},
+			})
+		}
 	}
-}
+
