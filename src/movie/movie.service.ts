@@ -106,8 +106,8 @@ export class MovieService {
 	}
 
 	async sendNotifications(dto: CreateMovieDto) {
-		if (process.env.NODE_ENV !== 'development')
-			await this.telegramService.sendPhoto(dto.poster)
+		//if (process.env.NODE_ENV !== 'development')
+			//await this.telegramService.sendPhoto(dto.poster)
 
 		const msg = `<b>${dto.title}</b>\n\n`
 
