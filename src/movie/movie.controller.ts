@@ -50,7 +50,7 @@ export class MovieController {
 		return this.movieService.getMostPopular()
 	}
 
-	@Put('update-count-opened')
+	@Post('/update-count-opened')
 	@HttpCode(200)
 	async updateCountOpened(@Body('slug') slug: string) {
 		return this.movieService.updateCountOpened(slug)
