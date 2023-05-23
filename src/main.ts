@@ -14,7 +14,7 @@ async function bootstrap() {
    next();
 	
   });
-  app.setGlobalPrefix('api')
+  //app.setGlobalPrefix('api')
   app.enableCors({
     origin: 'https://cinema24.vercel.app', // Укажите URL вашего клиента
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Укажите разрешенные методы
