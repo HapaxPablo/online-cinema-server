@@ -1,0 +1,8 @@
+1)yarn add @nestjs/config
+2)yarn add @typegoose/typegoose mongoose nestjs-typegoose
+3)yarn add -D @types/mongoose
+4)yarn add @nestjs/jwt
+5)yarn add @nestjs/jwt @nestjs/passport class-validator passport passport-jwt
+6)yarn add -D @types/bcryptjs @types/passport-jwt
+7)yarn add class-transformer
+8)yarn add bcryptjs
