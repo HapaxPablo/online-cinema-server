@@ -116,7 +116,7 @@ export class MovieService {
 				inline_keyboard: [
 					[
 						{
-							url: 'https://okko.tv/movie/free-guy',
+							url: 'https://cinema24.vercel.app/',
 							text: '🍿 Go to watch',
 						},
 					],
