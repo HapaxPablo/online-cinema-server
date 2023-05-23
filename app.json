@@ -1,0 +1,20 @@
+{
+    "name": "my-nest-app",
+    "description": "My NestJS Application",
+    "env": {
+      "MONGODB_URI": {
+        "description": "MongoDB connection URI",
+        "required": true
+      }
+    },
+    "scripts": {
+      "postinstall": "npm run build",
+      "start": "node dist/main",
+      "start:prod": "node dist/main"
+    },
+    "engines": {
+      "node": "14.x"
+    },
+    "stack": "heroku-20"
+  }
+  
