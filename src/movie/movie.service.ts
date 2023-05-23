@@ -106,10 +106,10 @@ export class MovieService {
 	}
 
 	async sendNotifications(dto: CreateMovieDto) {
-		//if (process.env.NODE_ENV != 'development')
-		//await this.telegramService.sendPhoto(dto.poster)
+		if (process.env.NODE_ENV != 'development')
+		await this.telegramService.sendPhoto(dto.poster)
 		//т.к. сайт не является выпущенным будем, то фотки будут подгружаться из вне
-		await this.telegramService.sendPhoto(
+		/*await this.telegramService.sendPhoto(
 			'https://images.fanart.tv/fanart/john-wick-544936324f252.jpg'
 		)
 		const msg = `<b>${dto.title}</b>`
@@ -124,6 +124,6 @@ export class MovieService {
 					],
 				],
 			},
-		})
+		})*/
 	}
 }
