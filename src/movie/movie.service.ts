@@ -79,10 +79,10 @@ export class MovieService {
 		id: string,
 		dto: CreateMovieDto
 	): Promise<DocumentType<MovieModel> | null> {
-		if (!dto.isSendTelegram) {
+		/*if (!dto.isSendTelegram) {
 			await this.sendNotifications(dto)
 			dto.isSendTelegram = true
-		}
+		}*/
 
 		return this.movieModel.findByIdAndUpdate(id, dto, { new: true }).exec()
 	}
@@ -105,7 +105,7 @@ export class MovieService {
 			.exec()
 	}
 
-	async sendNotifications(dto: CreateMovieDto) {
+	/*async sendNotifications(dto: CreateMovieDto) {
 		//if (process.env.NODE_ENV !== 'development')
 			//await this.telegramService.sendPhoto(dto.poster)
 
@@ -123,6 +123,6 @@ export class MovieService {
 				],
 			},
 		})
-	}
+	}*/
 	}
 
