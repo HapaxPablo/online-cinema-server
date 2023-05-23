@@ -6,9 +6,10 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "build": "nest build",
     "start:dev": "nest start --watch",
-  "start:debug": "nest start --debug --watch",
-  "start:prod": "node dist/main"
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
