@@ -11,7 +11,7 @@ import { ActorModule } from './actor/actor.module'
 import { MovieModule } from './movie/movie.module'
 import { RatingModule } from './rating/rating.module'
 import { TelegramModule } from './telegram/telegram.module'
-import { Module } from '@nestjs/common';
+import { Module } from '@nestjs/common'
 import * as mongoose from 'mongoose';
 import mongodbConfig from './mongodb.config';
 
@@ -32,6 +32,7 @@ import mongodbConfig from './mongodb.config';
 		FilesModule,
 		TelegramModule,
 		RatingModule,
+
 	],
 	controllers: [AppController],
 	providers: [AppService], //снабжение пример: app сервисы
@@ -51,4 +52,7 @@ export class AppModule {
 			console.error('Failed to connect to MongoDB:', error);
 		  });
 	  }
+	  
 }
+
+

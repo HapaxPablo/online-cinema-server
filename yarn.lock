@@ -1878,7 +1878,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:^9.0.0":
+"@nestjs/platform-express@npm:^9.4.2":
   version: 9.4.2
   resolution: "@nestjs/platform-express@npm:9.4.2"
   dependencies:
@@ -3172,7 +3172,7 @@ __metadata:
     "@nestjs/core": ^9.0.0
     "@nestjs/jwt": ^9.0.0
     "@nestjs/passport": ^9.0.0
-    "@nestjs/platform-express": ^9.0.0
+    "@nestjs/platform-express": ^9.4.2
     "@nestjs/schematics": ^9.0.0
     "@nestjs/serve-static": ^3.0.0
     "@nestjs/testing": ^9.0.0
