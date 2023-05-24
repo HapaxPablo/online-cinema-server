@@ -106,15 +106,15 @@ export class MovieService {
 	}
 
 	async sendNotifications(dto: CreateMovieDto) {
-		/*if (process.env.NODE_ENV !== 'development') {
-  const photoUrl = dto.poster;
-  await this.telegramService.sendPhoto(photoUrl);
-} */
-
 		if (process.env.NODE_ENV !== 'development') {
+  			const photoUrl = dto.poster;
+ 			 await this.telegramService.sendPhoto(photoUrl);
+		} 
+
+		/*if (process.env.NODE_ENV !== 'development') {
 			const photoUrl = `https://cinema24.vercel.app/${dto.poster}`;
 			await this.telegramService.sendPhoto(photoUrl);
-		  }
+		  }*/
 
 		const msg = `<b>${dto.title}</b>\n\n`
 
