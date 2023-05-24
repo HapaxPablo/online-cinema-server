@@ -79,10 +79,10 @@ export class MovieService {
 		id: string,
 		dto: CreateMovieDto
 	): Promise<DocumentType<MovieModel> | null> {
-		if (!dto.isSendTelegram) {
+		/*if (!dto.isSendTelegram) {
 			await this.sendNotifications(dto)
 			dto.isSendTelegram = true
-		}
+		}*/
 
 		return this.movieModel.findByIdAndUpdate(id, dto, { new: true }).exec()
 	}
@@ -105,16 +105,16 @@ export class MovieService {
 			.exec()
 	}
 
-	async sendNotifications(dto: CreateMovieDto) {
+	/*async sendNotifications(dto: CreateMovieDto) {
 		if (process.env.NODE_ENV !== 'development') {
   			const photoUrl = dto.poster;
  			 await this.telegramService.sendPhoto(photoUrl);
 		} 
 
-		/*if (process.env.NODE_ENV !== 'development') {
+		if (process.env.NODE_ENV !== 'development') {
 			const photoUrl = `https://cinema24.vercel.app/${dto.poster}`;
 			await this.telegramService.sendPhoto(photoUrl);
-		  }*/
+		  }
 
 		const msg = `<b>${dto.title}</b>\n\n`
 
@@ -130,6 +130,6 @@ export class MovieService {
 				],
 			},
 		})
-	}
+	}*/
 	}
 
