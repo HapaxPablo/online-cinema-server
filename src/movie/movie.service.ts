@@ -105,31 +105,28 @@ export class MovieService {
 			.exec()
 	}
 
-	async sendNotifications(dto: CreateMovieDto) {
-		if (process.env.NODE_ENV !== 'development') {
-  			const photoUrl = dto.poster;
- 			 await this.telegramService.sendPhoto(photoUrl);
-		} 
 
-		/*if (process.env.NODE_ENV !== 'development') {
-			const photoUrl = `https://cinema24.vercel.app/${dto.poster}`;
-			await this.telegramService.sendPhoto(photoUrl);
-		  }*/
-
-		const msg = `<b>${dto.title}</b>\n\n`
-
-		await this.telegramService.sendMessage(msg, {
-			reply_markup: {
+		async sendNotifications(dto: CreateMovieDto) {
+			if (dto.poster) {
+			  const photoUrl = `https://cinema24.vercel.app/${dto.poster}`;
+			  await this.telegramService.sendPhoto(photoUrl);
+			}
+		  
+			const msg = `<b>${dto.title}</b>\n\n`;
+		  
+			await this.telegramService.sendMessage(msg, {
+			  reply_markup: {
 				inline_keyboard: [
-					[
-						{
-							url: 'https://cinema24.vercel.app/',
-							text: '🍿 Go to watch',
-						},
-					],
+				  [
+					{
+					  url: 'https://cinema24.vercel.app/',
+					  text: '🍿 Go to watch',
+					},
+				  ],
 				],
-			},
-		})
-	}
+			  },
+			});
+		  }
+		  
 	}
 
