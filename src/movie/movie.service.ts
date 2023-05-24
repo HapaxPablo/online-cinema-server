@@ -111,10 +111,10 @@ export class MovieService {
  			 await this.telegramService.sendPhoto(photoUrl);
 		} 
 
-		if (process.env.NODE_ENV !== 'development') {
+		/*if (process.env.NODE_ENV !== 'development') {
 			const photoUrl = `https://cinema24.vercel.app/${dto.poster}`;
 			await this.telegramService.sendPhoto(photoUrl);
-		  }
+		  }*/
 
 		const msg = `<b>${dto.title}</b>\n\n`
 
