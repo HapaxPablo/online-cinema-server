@@ -119,7 +119,7 @@ export class MovieService {
 				inline_keyboard: [
 				  [
 					{
-					  url: 'https://cinema24.vercel.app/',
+					  url: `https://cinema24.vercel.app/${dto.slug}`,
 					  text: '🍿 Go to watch',
 					},
 				  ],
