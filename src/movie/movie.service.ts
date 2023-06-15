@@ -113,7 +113,7 @@ export class MovieService {
 			}
 		  
 			const msg = `<b>${dto.title}</b>\n\n`;
-			const msgUrl = `https://cinema24.vercel.app/${dto.slug}`
+			const msgUrl = `https://cinema24.vercel.app/movie/${dto.slug}`
 			await this.telegramService.sendMessage(msg, {
 			  reply_markup: {
 				inline_keyboard: [
